@@ -76,3 +76,10 @@ class Contact(View):
         msg.save()
 
         return redirect('/contact')
+
+class Login(View):
+    template_name = 'login.html'
+    contact = {}
+
+    def get(self, request):
+        return render(request, self.template_name, self.context)
